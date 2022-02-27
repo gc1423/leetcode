@@ -49,11 +49,11 @@ class linkedList(object):
             node.next.prev = node.prev
         return node
 
-    def moveToTail(self, node):
+    def moveToTail(self, node: listNode) -> None:
         node = self.removeNode(node)
         self.addNode(node)
 
-    def removeHead(self):
+    def removeHead(self) -> listNode:
         return self.removeNode(self.head)
 
 
@@ -119,6 +119,5 @@ if __name__ == '__main__':
         elif lst1[i] == 'put':
             obj.put(*lst2[i])
             print(f'put {lst2[i]}: ', {each.key: each.value for each in obj.cache.values()})
-            # obj.printLinkNodes()
         elif lst1[i] == 'get':
             print(f'get {lst2[i][0]}: ', obj.get(lst2[i][0]))
